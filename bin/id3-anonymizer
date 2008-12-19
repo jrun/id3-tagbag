@@ -1,0 +1,19 @@
+USAGE = "# Append --run to apply the changes#{$/}id3-anonymizer /path/to/music"
+if ARGV.empty?
+  puts USAGE
+  exit
+end
+
+path = ARGV.shift
+
+unless File.exist?(path)
+  puts "#{path} does not exist"
+end
+
+require File.dirname(__FILE__) + '/../lib/id3'
+if ARGV.include?("--run")
+  ID3::TagBag::Anonymizer.new(path).run
+else
+  puts "Building report..."
+  puts ID3::TagBag::Anonymizer.new(path)
+end
