@@ -1,0 +1,15 @@
+require File.dirname(__FILE__) + '/../lib/id3'
+
+class TagBag < Thor
+  desc "anonymize PATH_TO_MUSIC", "Remove identifying ID3 frames"
+  def anonymize(path_to_music)
+    ID3::TagBag::Anonymizer.new(path_to_music).run
+  end
+
+  desc "report PATH_TO_MUSIC", "Display the ID3 frames that would be removed by running 'anonymize'"
+  def report(path_to_music)
+    puts ID3::TagBag::Anonymizer.new(path_to_music)
+  end
+end
+
+TagBag.start
