@@ -6,4 +6,5 @@ require 'extlib/dictionary'
 require 'thor'
 require 'id3lib'
 
+require 'id3/tag_bag/base'
 require 'id3/tag_bag/anonymizer'
