@@ -9,7 +9,8 @@ RStack::Configuration.new 'id3-tagbag' do |config|
   config.version  = ID3::TagBag::Version::STRING
 
   config.dependencies['extlib'] = '>= 0.9.8'
+  config.dependencies['thor'] = '>= 0.9.9'
   config.dependencies['id3lib-ruby'] = '= 0.5.0'
 
-  config.executables << 'id3tag-anonymizer'
+  config.executables << 'tagbag'
 end
