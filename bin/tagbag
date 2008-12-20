@@ -6,15 +6,14 @@ class TagBag < Thor
     ID3::TagBag::Anonymizer.new(path_to_music).run
   end
 
-  desc "report PATH_TO_MUSIC", "Display the ID3 frames that would be removed by running 'anonymize'"
-  def report(path_to_music)
-    puts ID3::TagBag::Anonymizer.new(path_to_music)
-  end
+  # desc "report PATH_TO_MUSIC", "Display the ID3 frames that would be removed by running 'anonymize'"
+  # def report(path_to_music)
+  #   puts ID3::TagBag::Anonymizer.new(path_to_music)
+  # end
 
-  desc "peek PATH_TO_MUSIC", "Show the value of the give frame for all matching files"  
-  method_options :frame => :required
-  def peek(path_to_music)
-    ID3::TagBag::Peek.new(path_to_music).run(options[:frame])
+  desc "inspect PATH_TO_MUSIC", "Show all ID3 data"
+  def inspect(path_to_music)
+    ID3::TagBag::Inspect.new(path_to_music).run
   end
 end
 
