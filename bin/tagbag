@@ -10,6 +10,12 @@ class TagBag < Thor
   def report(path_to_music)
     puts ID3::TagBag::Anonymizer.new(path_to_music)
   end
+
+  desc "peek PATH_TO_MUSIC", "Show the value of the give frame for all matching files"  
+  method_options :frame => :required
+  def peek(path_to_music)
+    ID3::TagBag::Peek.new(path_to_music).run(options[:frame])
+  end
 end
 
 TagBag.start

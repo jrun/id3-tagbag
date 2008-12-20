@@ -22,9 +22,15 @@ module ID3
       end
 
       def inspect
-        "#<#{self.class} #{music_root.inspect}>"
+        "#<#{self.class} #{music_root.inspect}> #{$/}" << map do |tag|
+          inspect_tag(tag)
+        end.join
       end
-
+      
+      def inspect_tag(tag)
+        ""
+      end
+      
       def to_s
         inspect
       end

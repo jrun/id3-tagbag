@@ -22,10 +22,8 @@ module ID3
         end
       end
 
-      def inspect
-        super << $/ << map do |tag|
-          %Q[#{$/}#{tag.title}#{$/}  {:comment => '#{tag.comment}', :encoded_by => #{tag.encoded_by}, :publisher => #{tag.publisher}}]
-        end.join($/)
+      def inspect_tag(tag)
+        %Q[#{$/}#{tag.title}#{$/}  {:comment => '#{tag.comment}', :encoded_by => #{tag.encoded_by}, :publisher => #{tag.publisher}} #{$/}]
       end
     end
     

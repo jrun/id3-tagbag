@@ -7,4 +7,5 @@ require 'thor'
 require 'id3lib'
 
 require 'id3/tag_bag/base'
+require 'id3/tag_bag/peek'
 require 'id3/tag_bag/anonymizer'
