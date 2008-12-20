@@ -1,0 +1,15 @@
+h1. Usage
+
+h2. Print the frame for all MP3s found (recursively) in the given directory
+
+<pre><code>
+tagbag peek $HOME/Music --frame=TIT2
+</code></pre>
+
+h2. Strip the comment, encoded_by and publisher from the tag
+
+There are probably more frames that can be removed. 
+
+<pre><code>
+tagbag anonymize $HOME/Music
+</code></pre>
