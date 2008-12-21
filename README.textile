@@ -1,14 +1,20 @@
+The primary motivation for this little tool is to remove the Amazon metadata from their MP3s.
+
 h1. Usage
 
-h2. Print the frame for all MP3s found (recursively) in the given directory
+h3. Print all the frames for each file
 
 <pre><code>
-tagbag peek $HOME/Music --frame=TIT2
+tagbag inspect $HOME/Music
 </code></pre>
 
-h2. Strip the comment, encoded_by and publisher from the tag
+h3. Strip frames that identify the MP3 file
 
-There are probably more frames that can be removed. 
+<pre><code>
+tagbag anonymize $HOME/Music --dry-run
+</code></pre>
+
+Removes COMM, TCOP, TENC, TPUB, USER
 
 <pre><code>
 tagbag anonymize $HOME/Music
